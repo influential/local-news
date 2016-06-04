@@ -18,16 +18,19 @@ Each major news network (ABC, NBC, FOX, CBS) has a list of local affiliates on t
 Then using Haversine's formula, we can get the coordinates of any US location and find news stations within a given radius of that location. That gives us a list of news stations to extract news articles from.
 
 The two most reliable ways to extract news articles we could come up with were:
+
 1. Use XML sitemaps.
 2. Crawl the site.
 
 But about 1/3 of the news websites actually have sitemaps, and crawling news websites continually can take a long time, we want the list of news articles to be delivered quickly.
 
 So the current strategy is to:
+
 1. Find all sitemaps on the news websites, store the URL of the sitemaps and pull them from the database when needed. Get links to news articles from these.
 2. Extract all news article links from just the homepage of the site.
 
 To find all sitemaps for a site and extract links from them:
+
 1. Load the robots.txt file, usually sitemap URLS are listed there, almost every site has a robots.txt file.
 2. If the site doesn't have a robots.txt, just check newswebsite.com/sitemap.xml, if there is nothing there, then the site has no sitemaps (that we can reliably locate).
 3. If #2 is not true, load each of the sitemaps linked to in the robots.txt or the one located at newswebsite.com/sitemap.xml (if no robots.txt). Some sites have sitemaps that include sitemaps. If we find sitemaps within these first sitemaps we discover, we then also check them. We check a sitemap by seeing if it has a decent number of <url> sections that indicate a link to an article.
