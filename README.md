@@ -49,6 +49,7 @@ To extract links from a news website homepage:
 Once we've done this we have a list of links that may or may not be news articles. We need to filter them the best we can using a ranking algorithm.
 
 We rank them based on:
+
 1. Does the link have a unique date pattern in the URL? (2015/04/25)
 2. Does the link have a unique word sequence in the URL? (local-man-saves-boy-from-water)
 3. Does the link have a unique numer pattern in the URL? (articleid=123456)
