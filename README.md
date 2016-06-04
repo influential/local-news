@@ -71,6 +71,7 @@ Primary keys for both tables are the news website URL (column site and column ur
 1. Alternate ways of efficiently discovering new local news articles posted by sites (social media especially).
 2. Validating the date of news articles better.
 3. Crawling more than just the homepage, maybe looking for a /news or /localnews link in the menu and crawling that page too. Often too few news article links are returned from crawling homepages.
+
 ### Important Aspects
 1. Minimizing HTTP requests from server to save time and avoid being blocked from website.
 2. Asynchronously launching HTTP requests on Lambda, and doing any "extensive crawling" on Lambda because the Lambda instance IP Address changes frequently (helps mitigate blocking).
