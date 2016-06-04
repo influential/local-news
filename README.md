@@ -7,6 +7,7 @@ Finds local news articles within a given mile radius of a location.
 * PHP file containing primary application functionality
 * PHP file that provides an example front end to the application.
 * PHP file containg AWS SDK
+
 ### Concepts
 To find local news near a certain agent's location, we need to...
 1. Find local news station websites near the agent.
